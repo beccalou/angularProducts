@@ -1,0 +1,22 @@
+<!-- The "default" view. Will show all the products -->
+<h1 class='text-center'>Products</h1>
+<!-- search box that's used for filtering -->
+<input type='text' placeholder='search a product' ng-model='search.$'>
+
+<!-- search box that's used to add a product -->
+<input type='text' placeholder='add a product name' ng-model='add_name'>
+<input type='text' placeholder='add a product description' ng-model='add_description'>
+<input type='text' placeholder='add a product price' ng-model='add_price'>
+
+
+<!-- Listing of all the Products -->
+<div class="product-listing" ng-repeat="product in data.products | filter:search">
+
+   <!-- set a click handler on the "name" of a Product -->
+  <h3><a ng-click="viewPost($index + 1)" >{{product.name}}</a></h3>
+
+  <!-- Display a Product price and description -->
+  <div class="product-info">Price: {{product.price}} </div>
+  <div class="product-description">Description: {{product.description}} </div>
+
+</div

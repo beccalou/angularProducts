@@ -49,6 +49,7 @@ development:
   database: angularProducts_test
   pool: 5
   database: angularProducts_development
+  host: 'localhost'
 
 test:
   adapter: postgresql
