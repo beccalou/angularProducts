@@ -13,4 +13,13 @@ var IndexCtrl = function($scope, $location, $http, productData){
     $scope.navNewProduct = function(){
         $location.url('/product/new');
     };
+
+    $scope.addProduct = function(){
+        $location.url('product/new')
+
+    @IndexCtrl.$inject = ['$scope', '$location', '$http', 'postData']
+
+        ;
+    }
+
 };
