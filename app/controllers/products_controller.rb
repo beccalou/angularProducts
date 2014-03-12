@@ -7,7 +7,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new(product_params)
+    new_product = Product.new(product_params)
+    if new_product.valid?
+      new_product.save!
+    else
+      render 'public/422', :status => 422
+    end
+    render json: new_product
   end
 
   def create
