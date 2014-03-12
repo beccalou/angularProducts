@@ -19,7 +19,6 @@ var IndexCtrl = function($scope, $location, $http, productData){
 
     @IndexCtrl.$inject = ['$scope', '$location', '$http', 'postData']
 
-        ;
-    }
+    };
 
 };
