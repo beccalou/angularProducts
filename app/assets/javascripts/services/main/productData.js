@@ -31,6 +31,33 @@ angular.module('StoreFront').factory('productData',['$http', function($http){
             });
     }; // end of productData method
 
+    // Send a remote request to create a new product
+    productData.createProduct = function(newProduct, callback){
+        if(newProduct.newProductName == '' || newProduct.newProductdescription == '' || newProduct.newProductPrice == ''){
+            alert("Name, Description or Price is blank!");
+            return false;
+        }
+
+        var data = {new_product: {
+            name: newProduct.newProductName,
+            description: newProduct.newProductDescription,
+            price: newProduct.newProductPrice,
+        }};
+
+        $http.post('products.json', data).
+            success(function(data){
+                callback(data);
+            })
+            .error(function(){
+                console.log("Failed to create a new product");
+            });
+
+        return true;
+    };
+
     // return the productData
     return productData;
 }]);
+
+
+
