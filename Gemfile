@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-rails'
 # Includes all the needed Angular JS files.
 gem 'angularjs-rails'
 
